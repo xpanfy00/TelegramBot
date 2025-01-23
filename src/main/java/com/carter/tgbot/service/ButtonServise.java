@@ -19,7 +19,7 @@ public class ButtonServise {
         SendMessage message = SendMessage.builder()
                 .chatId(String.valueOf(chatId))
                 .text("Выберите категорию:")
-                .replyMarkup(createCategoryButtons()) // Добавляем кнопки
+                .replyMarkup(createCategoryButtons())
                 .build();
 
         try {
@@ -33,7 +33,7 @@ public class ButtonServise {
 
         List<InlineKeyboardRow> keyboard = new ArrayList<>();
 
-        // Список категорий
+
         List<String> categories = Arrays.asList(
                 "Дизайн",
                 "Разработка и IT",
@@ -44,24 +44,24 @@ public class ButtonServise {
                 "Бизнес и жизнь"
         );
 
-        // Создание кнопок для каждой категории
+
         for (String category : categories) {
             InlineKeyboardButton button = InlineKeyboardButton.builder()
                     .text(category)
-                    .callbackData("CATEGORY_" + category.replace(" ", "_")) // Уникальные данные для каждой кнопки
+                    .callbackData("CATEGORY_" + category.replace(" ", "_"))
                     .build();
 
-            // Создаем строку клавиатуры для кнопки
+
             InlineKeyboardRow row = new InlineKeyboardRow();
             row.add(button);
 
-            // Добавляем строку в клавиатуру
+
             keyboard.add(row);
         }
 
-        // Создание разметки клавиатуры
+
         return InlineKeyboardMarkup.builder()
-                .keyboard(keyboard) // Устанавливаем список строк клавиатуры
+                .keyboard(keyboard)
                 .build();
     }
 

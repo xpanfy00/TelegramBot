@@ -21,7 +21,7 @@ public class MyScheduledTask {
     }
 
 
-    // Метод выполняется в определенное время (cron выражение)
+
     @Scheduled(cron = "1 0/25 * * *  ?")
     public void executeCronTask() throws IOException, ExecutionException, InterruptedException {
 

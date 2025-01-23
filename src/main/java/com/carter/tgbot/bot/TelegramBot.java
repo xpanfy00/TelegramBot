@@ -49,8 +49,8 @@ public class TelegramBot implements SpringLongPollingBot, LongPollingSingleThrea
 
     public void sendMessageToUSer(String chatId, String text) {
         SendMessage message = SendMessage.builder()
-                .chatId(chatId)        // Установите chatId
-                .text(text)     // Установите текст сообщения
+                .chatId(chatId)
+                .text(text)
                 .build();
         try {
             telegramClient.execute(message);

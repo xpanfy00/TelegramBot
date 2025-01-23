@@ -30,8 +30,8 @@ public class ProjectDto {
     @Column(length = 5000)
     private String description;
     private String kworkCount;
-    private String fname; // Имя файла, если есть
-    private String url;   // URL файла, если есть
+    private String fname;
+    private String url;
     private String name;
     private int viewsDirty;
     private String timeLeft;

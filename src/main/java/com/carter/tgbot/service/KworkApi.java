@@ -38,11 +38,9 @@ public class KworkApi {
                 response.append(inputLine);
             }
 
-            // Преобразуем ответ в строку JSON
             String jsonResponse = response.toString();
 
 
-            // Парсим JSON с помощью Jackson
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode jsonNode = objectMapper.readTree(jsonResponse);
 
@@ -51,10 +49,10 @@ public class KworkApi {
         }
     }
 
-    // Метод для обработки JSON
+
     public static List<ProjectDto> processJson(JsonNode jsonNode) {
         List<ProjectDto> projectDtos = new ArrayList<>();
-        // Извлечение массива projectDtos из JSON
+
         JsonNode wantsArray = jsonNode.path("data").path("pagination").path("data");
         if (wantsArray.isArray()) {
             for (JsonNode item : wantsArray) {
